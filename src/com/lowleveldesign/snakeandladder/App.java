@@ -45,8 +45,8 @@ public class App {
         Player srk = new Player(2,"Shah Rukh Khan");
 
         players = new HashMap<>();
-        players.put(akshay.getName(), 1 );
-        players.put(srk.getName(),2);
+        players.put(akshay.getName(), 0);
+        players.put(srk.getName(),0);
 
         playQueue = new LinkedList<>();
         playQueue.offer(akshay);
