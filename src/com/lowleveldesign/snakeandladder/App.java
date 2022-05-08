@@ -17,11 +17,9 @@ public class App {
     private List<Jumper> ladders;
 
     private App(){
-
         addDiceAndBoard();
         addSnakesAndLadders();
         addPlayers();
-
     }
 
     private void addDiceAndBoard(){
