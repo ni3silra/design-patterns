@@ -29,7 +29,7 @@ public class GameBoard {
             int targetPosition = currentPosition + randomNumFromDice;
 
             if (checkIfBoardEnded(targetPosition)) {
-                addPlayersInQueue(currentPlayer, targetPosition);
+                addPlayersInQueue(currentPlayer, currentPosition);
                 continue;
             }
 
