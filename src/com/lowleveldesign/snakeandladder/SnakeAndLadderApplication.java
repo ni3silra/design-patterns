@@ -13,17 +13,15 @@ public class SnakeAndLadderApplication {
     private PlayerSettings playerSettings;
 
     public SnakeAndLadderApplication() {
-        setGameSettings();
+        GameSettings.setLevel(Level.EASY);
         setPlayerSettings();
     }
 
-    private void setGameSettings() {
-         GameSettings.setLevel(Level.EASY);
-    }
-
     private void setPlayerSettings() {
-        List<Player> playerList = List.of(new Player("Akshay Kumar", 0),
+        List<Player> playerList = List.of(
+                new Player("Akshay Kumar", 0),
                 new Player("Shah Rukh Khan", 0));
+        
         playerSettings = new PlayerSettings(playerList);
     }
 

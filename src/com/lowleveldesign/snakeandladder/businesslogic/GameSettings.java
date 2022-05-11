@@ -10,18 +10,11 @@ import java.util.List;
 
 public class GameSettings {
 
-    LevelStrategy levelStrategy;
-
-    private GameSettings(Level level){
-        levelStrategy = LevelMenu.getLevel(level);
-        prepareBoard();
+    private GameSettings() {
     }
 
-    public static void setLevel(Level level){
-        new GameSettings(level);
-    }
-
-    private void prepareBoard(){
+    public static void setLevel(Level level) {
+        LevelStrategy levelStrategy = LevelMenu.getLevel(level);
 
         int boardSize = levelStrategy.getBoardSize();
         Dice dice = levelStrategy.getDice();
@@ -30,4 +23,5 @@ public class GameSettings {
 
         GameBoardUtility.createBoard(boardSize, dice, snakes, ladders);
     }
+
 }

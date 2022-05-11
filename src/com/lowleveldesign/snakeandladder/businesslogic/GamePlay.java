@@ -15,7 +15,7 @@ public class GamePlay {
 
     Logger logger = Logger.getInstance();
 
-    public GamePlay( PlayerSettings playerSettings) {
+    public GamePlay(PlayerSettings playerSettings) {
         this.players = playerSettings.getPlayers();
         this.playQueue = playerSettings.getPlayQueue();
     }
@@ -32,6 +32,7 @@ public class GamePlay {
 
             if (isBoardEndedBeforePosition(targetPosition)) {
                 addPlayersInQueue(currentPlayer, currentPosition);
+                logger.log(currentPlayer.getName() + " No Movement for this time");
                 continue;
             }
 
@@ -43,10 +44,10 @@ public class GamePlay {
             int nextPosition = getNextPosition(targetPosition, currentPlayer);
 
             addPlayersInQueue(currentPlayer, nextPosition);
+            logger.log(currentPlayer.getName() + " placed get to next Position :- " + nextPosition);
         }
 
         logger.log("Game Ended");
-
     }
 
     private Player getCurrentPlayer() {
@@ -54,11 +55,6 @@ public class GamePlay {
     }
 
     private void addPlayersInQueue(Player currentPlayer, int nextPosition) {
-        if (!isBoardEndedBeforePosition(nextPosition))
-            logger.log(currentPlayer.getName() + " placed get to next Position :- " + nextPosition);
-        else
-            logger.log(currentPlayer.getName() + " No Movement for this time");
-
         playQueue.offer(currentPlayer);
         players.put(currentPlayer.getName(), nextPosition);
     }
