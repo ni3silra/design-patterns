@@ -10,8 +10,6 @@ import java.util.List;
 
 public class SnakeAndLadderApplication {
 
-    private PlayerSettings playerSettings;
-
     public SnakeAndLadderApplication() {
         GameSettings.setLevel(Level.EASY);
         setPlayerSettings();
@@ -21,13 +19,12 @@ public class SnakeAndLadderApplication {
         List<Player> playerList = List.of(
                 new Player("Akshay Kumar", 0),
                 new Player("Shah Rukh Khan", 0));
-        
-        playerSettings = new PlayerSettings(playerList);
+
+        PlayerSettings.addPlayers(playerList);
     }
 
     private void start() {
-        GamePlay gamePlay = new GamePlay(playerSettings);
-        gamePlay.startGame();
+        GamePlay.start();
     }
 
     public static void main(String[] args) {

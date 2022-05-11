@@ -15,12 +15,18 @@ public class GamePlay {
 
     Logger logger = Logger.getInstance();
 
-    public GamePlay(PlayerSettings playerSettings) {
+    private GamePlay() {
+        PlayerSettings playerSettings = PlayerSettings.settings;
         this.players = playerSettings.getPlayers();
         this.playQueue = playerSettings.getPlayQueue();
     }
 
-    public void startGame() {
+    public static void start() {
+        if (ValidateSettings.validate())
+            new GamePlay().startGame();
+    }
+
+    private void startGame() {
 
         logger.log("Game Started");
 

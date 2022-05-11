@@ -6,17 +6,24 @@ import com.lowleveldesign.snakeandladder.logging.Logger;
 import java.util.*;
 
 public class PlayerSettings {
+
+    public static PlayerSettings settings;
+
     private final Map<String, Integer> players;
     private final Queue<Player> playQueue;
     private final Logger logger =Logger.getInstance();
 
-    public PlayerSettings(List<Player> playerList) {
+    private PlayerSettings(List<Player> playerList){
         players = new HashMap<>();
         playQueue = new LinkedList<>();
-        addPlayers(playerList);
+        addPlayersInSettings(playerList);
     }
 
-    private void addPlayers(List<Player> playerList) {
+    public static void addPlayers(List<Player> playerList) {
+        settings =   new PlayerSettings(playerList);
+    }
+
+    private void addPlayersInSettings(List<Player> playerList) {
         for (Player player : playerList) {
             players.put(player.getName(), player.getInitialPosition());
             playQueue.offer(player);

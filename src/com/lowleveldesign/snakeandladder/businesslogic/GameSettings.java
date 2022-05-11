@@ -10,6 +10,8 @@ import java.util.List;
 
 public class GameSettings {
 
+    private static boolean initialized;
+
     private GameSettings() {
     }
 
@@ -22,6 +24,11 @@ public class GameSettings {
         List<Jumper> ladders = levelStrategy.prepareLadders();
 
         GameBoardUtility.createBoard(boardSize, dice, snakes, ladders);
+        initialized = true;
+    }
+
+    public static boolean isInitialized(){
+        return initialized;
     }
 
 }
