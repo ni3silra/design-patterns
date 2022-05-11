@@ -1,26 +1,23 @@
 package com.lowleveldesign.snakeandladder.businesslogic;
 
-import com.lowleveldesign.snakeandladder.entity.Dice;
 import com.lowleveldesign.snakeandladder.entity.Player;
 import com.lowleveldesign.snakeandladder.logging.Logger;
 
 import java.util.Map;
 import java.util.Queue;
 
+import static com.lowleveldesign.snakeandladder.businesslogic.GameBoardUtility.*;
+
 public class GamePlay {
 
-    private final Queue<Player> playQueue;
     private final Map<String, Integer> players;
-    private final Dice dice;
-    private final GameBoard board;
+    private final Queue<Player> playQueue;
 
     Logger logger = Logger.getInstance();
 
-    public GamePlay(GameBoard board, Dice dice, Map<String, Integer> players, Queue<Player> playQueue) {
-        this.playQueue = playQueue;
-        this.dice = dice;
-        this.players = players;
-        this.board = board;
+    public GamePlay( PlayerSettings playerSettings) {
+        this.players = playerSettings.getPlayers();
+        this.playQueue = playerSettings.getPlayQueue();
     }
 
     public void startGame() {
@@ -30,20 +27,20 @@ public class GamePlay {
         while (!playQueue.isEmpty()) {
             Player currentPlayer = getCurrentPlayer();
             int currentPosition = players.get(currentPlayer.getName());
-            int randomNumFromDice = dice.rollDice();
+            int randomNumFromDice = rollDice();
             int targetPosition = currentPosition + randomNumFromDice;
 
-            if (board.isBoardEndedBeforePosition(targetPosition)) {
+            if (isBoardEndedBeforePosition(targetPosition)) {
                 addPlayersInQueue(currentPlayer, currentPosition);
                 continue;
             }
 
-            if (board.isWinningPosition(targetPosition)) {
+            if (isWinningPosition(targetPosition)) {
                 logger.log(currentPlayer.getName() + " won");
                 break;
             }
 
-            int nextPosition = board.getNextPosition(targetPosition, currentPlayer);
+            int nextPosition = getNextPosition(targetPosition, currentPlayer);
 
             addPlayersInQueue(currentPlayer, nextPosition);
         }
@@ -57,7 +54,7 @@ public class GamePlay {
     }
 
     private void addPlayersInQueue(Player currentPlayer, int nextPosition) {
-        if (!board.isBoardEndedBeforePosition(nextPosition))
+        if (!isBoardEndedBeforePosition(nextPosition))
             logger.log(currentPlayer.getName() + " placed get to next Position :- " + nextPosition);
         else
             logger.log(currentPlayer.getName() + " No Movement for this time");

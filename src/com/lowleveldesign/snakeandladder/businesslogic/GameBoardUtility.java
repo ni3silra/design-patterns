@@ -1,5 +1,6 @@
 package com.lowleveldesign.snakeandladder.businesslogic;
 
+import com.lowleveldesign.snakeandladder.entity.Dice;
 import com.lowleveldesign.snakeandladder.entity.Jumper;
 import com.lowleveldesign.snakeandladder.entity.Player;
 import com.lowleveldesign.snakeandladder.logging.Logger;
@@ -7,21 +8,26 @@ import com.lowleveldesign.snakeandladder.logging.Logger;
 import java.util.List;
 import java.util.Optional;
 
-public class GameBoard {
+public class GameBoardUtility {
 
-    int boardSize;
-    private final List<Jumper> snakes;
-    private final List<Jumper> ladders;
+    private static int boardSize;
+    private static Dice dice;
+    private static List<Jumper> snakes;
+    private static List<Jumper> ladders;
 
-    Logger logger = Logger.getInstance();
+    static Logger logger = Logger.getInstance();
 
-    public GameBoard(int boardSize, List<Jumper> snakes, List<Jumper> ladders) {
-        this.boardSize = boardSize;
-        this.snakes = snakes;
-        this.ladders = ladders;
+    private GameBoardUtility(){
     }
 
-    int getNextPosition(int targetPosition, Player currentPlayer) {
+    public static void createBoard(int boardSize,Dice dice, List<Jumper> snakes, List<Jumper> ladders) {
+        GameBoardUtility.boardSize = boardSize;
+        GameBoardUtility.dice = dice;
+        GameBoardUtility.snakes = snakes;
+        GameBoardUtility.ladders = ladders;
+    }
+
+    static int getNextPosition(int targetPosition, Player currentPlayer) {
 
         int snakePosition = getPositionIfSnakePresent(targetPosition);
         if (snakePosition != -1) {
@@ -38,7 +44,7 @@ public class GameBoard {
         return targetPosition;
     }
 
-    private int getPositionIfSnakePresent(int targetPosition) {
+    private static int getPositionIfSnakePresent(int targetPosition) {
         Optional<Integer> snakePosition = snakes.stream()
                 .filter(snake -> snake.getStartPoint() == targetPosition)
                 .map(Jumper::getEndPoint)
@@ -46,7 +52,7 @@ public class GameBoard {
         return snakePosition.orElse(-1);
     }
 
-    private int getPositionIfLadderPresent(int targetPosition) {
+    private static int getPositionIfLadderPresent(int targetPosition) {
         Optional<Integer> ladderPosition = ladders.stream()
                 .filter(ladder -> ladder.getStartPoint() == targetPosition)
                 .map(Jumper::getEndPoint)
@@ -54,12 +60,15 @@ public class GameBoard {
         return ladderPosition.orElse(-1);
     }
 
-    boolean isBoardEndedBeforePosition(int targetPosition) {
+    static boolean isBoardEndedBeforePosition(int targetPosition) {
         return targetPosition > boardSize;
     }
 
-    boolean isWinningPosition(int targetPosition) {
+    static boolean isWinningPosition(int targetPosition) {
         return targetPosition == boardSize;
     }
 
+    static int rollDice(){
+        return dice.rollDice();
+    }
 }

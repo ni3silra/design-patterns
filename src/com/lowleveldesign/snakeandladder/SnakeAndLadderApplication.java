@@ -1,39 +1,40 @@
 package com.lowleveldesign.snakeandladder;
 
-import com.lowleveldesign.snakeandladder.businesslogic.GameBoard;
 import com.lowleveldesign.snakeandladder.businesslogic.GamePlay;
+import com.lowleveldesign.snakeandladder.businesslogic.GameSettings;
+import com.lowleveldesign.snakeandladder.businesslogic.PlayerSettings;
 import com.lowleveldesign.snakeandladder.entity.*;
 import com.lowleveldesign.snakeandladder.level.Level;
-import com.lowleveldesign.snakeandladder.level.LevelMenu;
-import com.lowleveldesign.snakeandladder.level.LevelStrategy;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Queue;
 
 public class SnakeAndLadderApplication {
 
-    public static void main(String[] args) {
+    private PlayerSettings playerSettings;
 
-        LevelMenu menu = LevelMenu.getInstance();
-        LevelStrategy level = menu.getLevel(Level.EASY);
+    public SnakeAndLadderApplication() {
+        setGameSettings();
+        setPlayerSettings();
+    }
 
-        int boardSize = level.getBoardSize();
-        Dice dice = level.getDice();
-        List<Jumper> snakes = level.prepareSnakes();
-        List<Jumper> ladders = level.prepareLadders();
+    private void setGameSettings() {
+         GameSettings.setLevel(Level.EASY);
+    }
 
-        GameBoard board = new GameBoard(boardSize, snakes, ladders);
+    private void setPlayerSettings() {
+        List<Player> playerList = List.of(new Player("Akshay Kumar", 0),
+                new Player("Shah Rukh Khan", 0));
+        playerSettings = new PlayerSettings(playerList);
+    }
 
-        PlayerSettings playerSettings = new PlayerSettings();
-        playerSettings.setPlayerInGame();
-
-        Map<String, Integer> players = playerSettings.getPlayers();
-        Queue<Player> playerQueue = playerSettings.getPlayQueue();
-
-        GamePlay gamePlay = new GamePlay(board, dice, players, playerQueue);
-
+    private void start() {
+        GamePlay gamePlay = new GamePlay(playerSettings);
         gamePlay.startGame();
+    }
+
+    public static void main(String[] args) {
+        SnakeAndLadderApplication application = new SnakeAndLadderApplication();
+        application.start();
     }
 
 }
