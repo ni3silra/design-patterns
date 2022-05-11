@@ -16,4 +16,9 @@ public class Logger {
         System.out.println(msg);
     }
 
+    public void logErr(String msg){
+        System.out.println(msg);
+        System.out.println("Game Ended");
+    }
+
 }

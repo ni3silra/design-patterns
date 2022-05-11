@@ -16,9 +16,8 @@ public class GamePlay {
     Logger logger = Logger.getInstance();
 
     private GamePlay() {
-        PlayerSettings playerSettings = PlayerSettings.settings;
-        this.players = playerSettings.getPlayers();
-        this.playQueue = playerSettings.getPlayQueue();
+        this.players = PlayerSettings.INSTANCE.getPlayers();
+        this.playQueue = PlayerSettings.INSTANCE.getPlayQueue();
     }
 
     public static void start() {

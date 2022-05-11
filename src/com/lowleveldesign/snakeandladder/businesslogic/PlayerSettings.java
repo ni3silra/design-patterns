@@ -7,7 +7,7 @@ import java.util.*;
 
 public class PlayerSettings {
 
-    public static PlayerSettings settings;
+    public static PlayerSettings INSTANCE;
 
     private final Map<String, Integer> players;
     private final Queue<Player> playQueue;
@@ -20,7 +20,7 @@ public class PlayerSettings {
     }
 
     public static void addPlayers(List<Player> playerList) {
-        settings =   new PlayerSettings(playerList);
+        INSTANCE =   new PlayerSettings(playerList);
     }
 
     private void addPlayersInSettings(List<Player> playerList) {
