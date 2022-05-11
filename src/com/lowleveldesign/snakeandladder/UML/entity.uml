@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.lowleveldesign.snakeandladder.entity</OriginalElement>
+  <nodes>
+    <node x="0.0" y="315.0">com.lowleveldesign.snakeandladder.entity.Dice</node>
+    <node x="0.0" y="126.0">com.lowleveldesign.snakeandladder.entity.Ladder</node>
+    <node x="353.0" y="0.0">com.lowleveldesign.snakeandladder.entity.Player</node>
+    <node x="82.0" y="0.0">com.lowleveldesign.snakeandladder.entity.Jumper</node>
+    <node x="164.0" y="126.0">com.lowleveldesign.snakeandladder.entity.Snake</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.lowleveldesign.snakeandladder.entity.Ladder" target="com.lowleveldesign.snakeandladder.entity.Jumper" relationship="REALIZATION">
+      <point x="0.0" y="-72.0" />
+      <point x="72.0" y="101.0" />
+      <point x="154.0" y="101.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="com.lowleveldesign.snakeandladder.entity.Snake" target="com.lowleveldesign.snakeandladder.entity.Jumper" relationship="REALIZATION">
+      <point x="0.0" y="-72.0" />
+      <point x="236.0" y="101.0" />
+      <point x="154.0" y="101.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="258.5" y="207.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

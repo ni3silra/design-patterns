@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.lowleveldesign.snakeandladder.level</OriginalElement>
+  <nodes>
+    <node x="0.0" y="402.0">com.lowleveldesign.snakeandladder.level.Level</node>
+    <node x="235.0" y="214.0">com.lowleveldesign.snakeandladder.level.HardLevelStrategy</node>
+    <node x="226.0" y="0.0">com.lowleveldesign.snakeandladder.level.LevelStrategy</node>
+    <node x="470.0" y="214.0">com.lowleveldesign.snakeandladder.level.EasyLevelStrategy</node>
+    <node x="202.0" y="402.0">com.lowleveldesign.snakeandladder.level.LevelMenu</node>
+    <node x="0.0" y="214.0">com.lowleveldesign.snakeandladder.level.MediumLevelStrategy</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.lowleveldesign.snakeandladder.level.HardLevelStrategy" target="com.lowleveldesign.snakeandladder.level.LevelStrategy" relationship="REALIZATION">
+      <point x="0.0" y="-71.5" />
+      <point x="0.0" y="82.0" />
+    </edge>
+    <edge source="com.lowleveldesign.snakeandladder.level.MediumLevelStrategy" target="com.lowleveldesign.snakeandladder.level.LevelStrategy" relationship="REALIZATION">
+      <point x="0.0" y="-71.5" />
+      <point x="107.5" y="189.0" />
+      <point x="342.5" y="189.0" />
+      <point x="0.0" y="82.0" />
+    </edge>
+    <edge source="com.lowleveldesign.snakeandladder.level.EasyLevelStrategy" target="com.lowleveldesign.snakeandladder.level.LevelStrategy" relationship="REALIZATION">
+      <point x="0.0" y="-71.5" />
+      <point x="577.5" y="189.0" />
+      <point x="342.5" y="189.0" />
+      <point x="0.0" y="82.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="342.5" y="317.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

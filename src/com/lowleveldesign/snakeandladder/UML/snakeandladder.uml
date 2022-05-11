@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.lowleveldesign.snakeandladder</OriginalElement>
+  <nodes>
+    <node x="171.0" y="270.0">com.lowleveldesign.snakeandladder.level</node>
+    <node x="0.0" y="196.0">com.lowleveldesign.snakeandladder.logging</node>
+    <node x="0.0" y="0.0">com.lowleveldesign.snakeandladder.SnakeAndLadderApplication</node>
+    <node x="0.0" y="270.0">com.lowleveldesign.snakeandladder.entity</node>
+    <node x="0.0" y="122.0">com.lowleveldesign.snakeandladder.businesslogic</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="144.5" y="149.5" />
+  <SelectedNodes>
+    <node>com.lowleveldesign.snakeandladder.logging</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

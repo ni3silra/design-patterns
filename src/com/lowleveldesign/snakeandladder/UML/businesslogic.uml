@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.lowleveldesign.snakeandladder.businesslogic</OriginalElement>
+  <nodes>
+    <node x="280.0" y="365.0">com.lowleveldesign.snakeandladder.businesslogic.GameSettings</node>
+    <node x="486.0" y="365.0">com.lowleveldesign.snakeandladder.businesslogic.ValidateSettings</node>
+    <node x="0.0" y="365.0">com.lowleveldesign.snakeandladder.businesslogic.GamePlay</node>
+    <node x="387.0" y="0.0">com.lowleveldesign.snakeandladder.businesslogic.PlayerSettings</node>
+    <node x="0.0" y="0.0">com.lowleveldesign.snakeandladder.businesslogic.GameBoardUtility</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="322.5" y="287.5" />
+  <SelectedNodes>
+    <node>com.lowleveldesign.snakeandladder.businesslogic.GameSettings</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
