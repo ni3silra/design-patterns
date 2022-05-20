@@ -13,7 +13,7 @@ public class SnakeAndLadderApplication {
                 new Player("Shah Rukh Khan", 0),
                 new Player("Akshay Kumar", 0));
 
-        GameSettings.setLevel(Level.EASY);
+        GameSettings.setLevel(Level.MEDIUM);
         PlayerSettings.addPlayers(playerList);
         GamePlay.start();
     }
